@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --clr-neutral-very-dark-blue: hsl(217, 54%, 11%);
+      --clr-neutral-dark-grayish-blue: hsl(216, 50%, 16%);
+      --clr-neutral-grayish-blue: hsl(215, 32%, 27%);
+      --clr-accent-cyan: hsl(178, 100%, 50%);
+      --clr-accent-soft-blue: hsl(215, 51%, 70%);
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 400;
+      src: url(./fonts/Outfit-Regular.ttf) format('truetype');
+    }
+    body {
+      min-height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--clr-neutral-very-dark-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+   main {
+    background-color: var(--clr-neutral-dark-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: clamp(18rem, 85vw, 22rem);
+  padding: 1.5rem;
+  box-sizing: border-box;
+    border-radius: 1rem;
+   }
+   .img-equilibrium {
+    display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  
+   }
+   .text-container {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   }
+    h1 {
+    color: white;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    margin-block-start:0.3rem;
+    margin-block-end:0;
+    }
+    .text {
+      color: var(--clr-accent-soft-blue);
+      font-size: clamp(0.875rem, 2.5vw, 0.9rem);
+      line-height: 1.5rem;
+      margin-block-start:0.8rem;
+      margin-block-end:0;
+    }
+    .blue-clr {
+      color: var(--clr-accent-cyan);
+      font-weight: 600;
+    }
+    .grey-clr {
+      color: var(--clr-accent-soft-blue);
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      font-size: clamp(0.875rem, 2.5vw, 0.9rem);
+      border-bottom: 1px solid var(--clr-neutral-grayish-blue);
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-block-start: 0.8rem;
+      margin-block-end: 0.4rem;
+    }
+    .img-avatar {
+ border: 1px solid white;
+      border-radius: 50%;
+      width: 2rem;
+    }
+    .white {
+      color: white;
+    }
+    .image-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      margin-block: 1rem;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+       display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: hsla(178, 100%, 50%, 0.5);
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+    }
+    .image-container:hover .overlay {
+      opacity: 1;
+    }
+    .img-view {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .white:hover {
+      color: var(--clr-accent-cyan);
+      cursor: pointer;
+      transition: color 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <div class="image-container">
+  <img src="image-equilibrium.jpg" alt="img-equilibrium" class="img-equilibrium">
+
+  <div class="overlay">
+    <img src="icon-view.svg" alt="img-view" class="img-view">
+  </div>
+  </div>
+  
+<div class="text-container">
+  <h1>Equilibrium #3429</h1>
+
+ <p class="text">Our Equilibrium collection promotes balance and calm.</p>
+
+<div class="flex-container">
+ <div class="left">
+ <img src="icon-ethereum.svg" alt="img-ethereum" class="img-ethereum">
+ <p class="blue-clr">0.041 ETH</p>
+ </div>
+
+ <div class="right">
+   <img src="icon-clock.svg" alt="img-clock" class="img-clock">
+   <p class="grey-clr">3 days left</p>
+ </div>
+</div>
+
+<div class="author">
+<img src="icon-avatar.svg" alt="img-avatar" class="img-avatar">
+ <span class="grey-clr">Creation of</span><span class="white"> Jules Wyvern</span>
+</div>
+</div>
+
+</main>
+</body>
+</html>
